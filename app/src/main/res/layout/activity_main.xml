@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity"
+    tools:background="@drawable/dawn_resource"
+    >
+
+
+    <ImageView
+        android:id="@+id/imageViewCurrent"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="@dimen/standard_margin"
+        android:layout_marginStart="@dimen/standard_margin"
+        android:layout_marginBottom="@dimen/standard_margin"
+        android:layout_marginTop="30dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic___clear_sky_dawn"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewTemp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/standard_margin"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:textSize="30sp"
+        tools:text="35"
+        android:textColor="@color/primaryTextColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="@id/imageViewCurrent"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewMaxMinTemp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:gravity="center"
+        tools:text="24/30"
+        android:textColor="@color/secondaryTextColor"
+        app:layout_constraintStart_toStartOf="@id/textViewTemp"
+        app:layout_constraintEnd_toEndOf="@id/textViewTemp"
+        app:layout_constraintTop_toBottomOf="@id/textViewTemp"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewLoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textViewMaxMinTemp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="@drawable/shape"
+        android:padding="@dimen/standard_margin"
+        tools:text="Tehran"
+        android:textColor="@color/primaryTextColor"
+        android:drawableStart="@drawable/ic_baseline_location_on_24"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewHourly"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/standard_margin"
+        app:layout_constraintTop_toBottomOf="@id/textViewLoc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/recyclerViewDaily"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewDaily"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/standard_margin"
+        app:layout_constraintTop_toBottomOf="@id/recyclerViewHourly"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
